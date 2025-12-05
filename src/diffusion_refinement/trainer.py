@@ -1,11 +1,7 @@
-import os.path
-
 import torch
-import wandb
 from tqdm import tqdm
 import torch.nn.functional as F
 
-from utils import Statistics
 from torchvision.utils import save_image
 import numpy as np
 import random
@@ -20,7 +16,7 @@ def set_seed(seed, device):
 
 
 class Trainer:
-    def __init__(self, cfg, model, model_vae=None, wandb_key=None, starting_epoch=0):
+    def __init__(self, cfg, model, model_vae=None, starting_epoch=0):
         self.datamodule = None
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -67,11 +63,6 @@ class Trainer:
         self.loss_best_value = 100000
 
         self.starting_epoch = starting_epoch
-
-        # wandb login
-        if wandb_key:
-            login_success = self._wandb_login(wandb_key)
-            print(f"Wandb login success: {login_success}")
 
     def _extract_t(self, vals, x_shape, t):
         # extract specified values according to timesteps t from precomputed vals

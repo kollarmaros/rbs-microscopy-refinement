@@ -46,7 +46,3 @@ The usage of refinement of the tubule segmentation mask is shown in [refine_tubu
 For the 1 Stage diffusion refinement, the $t_{start}$ was set to $250$, as the changes in structure appeared for higher values. This approach is SDEdit inspired, because DDPM model was used for refinement and not SDE.
 
 3 stage approach used $t_1 = 650$, $t_2 = 350$, and $t_3 = 250$
-
-
-TODO: 
-- add requirements

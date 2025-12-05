@@ -1,0 +1,3 @@
+**/__pycache__/
+src/diffusion_refinement/models/Ldm_adj2_cos_1000_v2adj2_512_2500.pth
+src/diffusion_refinement/models/vqvae_autoencoder_ckpt_v2_512_adj2_random.pth
